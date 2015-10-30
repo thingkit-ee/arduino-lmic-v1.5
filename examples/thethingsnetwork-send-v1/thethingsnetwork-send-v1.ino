@@ -25,7 +25,7 @@
  *******************************************************************************/
 
 #include <lmic.h>
-#include <hal/hal.h>
+#include <hal.h>
 #include <SPI.h>
 
 // LoRaWAN Application identifier (AppEUI)
