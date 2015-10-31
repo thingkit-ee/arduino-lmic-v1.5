@@ -270,7 +270,7 @@ static void writeReg (u1_t addr, u1_t data ) {
 static u1_t readReg (u1_t addr) {
     hal_pin_nss(0);
     hal_spi(addr & 0x7F);
-    u1_t val = hal_spi(0x00);
+    u1_t val = hal_spi(0xFF);
     hal_pin_nss(1);
     return val;
 }

@@ -72,7 +72,7 @@ static osjob_t sendjob;
 
 // Pin mapping
 lmic_pinmap pins = {
-  .nss = 10,
+  .nss = 53,
   .rxtx = 7, // Not connected on RFM92/RFM95
   .rst = 9,  // Needed on RFM92/RFM95
   .dio = {2, 5, 6},
@@ -119,7 +119,7 @@ void do_send(osjob_t* j){
 }
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.println("Starting");
   // LMIC init
   os_init();
