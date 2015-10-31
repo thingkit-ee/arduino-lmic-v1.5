@@ -46,7 +46,7 @@ static const u1_t ARTKEY[16] = { 0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6,
 
 // LoRaWAN end-device address (DevAddr)
 // See http://thethingsnetwork.org/wiki/AddressSpace
-static const u4_t DEVADDR = 0x03FF0001; // <-- Change this address for every node!
+static const u4_t DEVADDR = 0x03FF0007; // <-- Change this address for every node!
 
 //////////////////////////////////////////////////
 // APPLICATION CALLBACKS
@@ -56,7 +56,6 @@ static const u4_t DEVADDR = 0x03FF0001; // <-- Change this address for every nod
 void os_getArtEui (u1_t* buf) {
     memcpy(buf, APPEUI, 8);
 }
-
 // provide device ID (8 bytes, LSBF)
 void os_getDevEui (u1_t* buf) {
     memcpy(buf, DEVEUI, 8);
@@ -67,7 +66,7 @@ void os_getDevKey (u1_t* buf) {
     memcpy(buf, DEVKEY, 16);
 }
 
-uint8_t mydata[] = "It is Snoopy D.O double G!!!";
+uint8_t mydata[] = "IIIIII";
 static osjob_t sendjob;
 
 // Pin mapping
@@ -132,7 +131,7 @@ void onEvent (ev_t ev) {
           Serial.println(millis() / 1000);
           if(LMIC.dataLen) { // data received in rx slot after tx
               //debug_buf(LMIC.frame+LMIC.dataBeg, LMIC.dataLen);
-              Serial.println("Data Received!");
+              Serial.println("Data Received");
           }
           break;
        default:

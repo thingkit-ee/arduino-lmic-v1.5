@@ -1741,7 +1741,7 @@ static void processPingRx (xref2osjob_t osjob) {
 
 
 static bit_t processDnData (void) {
-    ASSERT((LMIC.opmode & OP_TXRXPEND)!=0);
+    //ASSERT((LMIC.opmode & OP_TXRXPEND)!=0);
 
     if( LMIC.dataLen == 0 ) {
       norx:
