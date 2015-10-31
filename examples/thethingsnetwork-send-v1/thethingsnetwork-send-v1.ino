@@ -46,7 +46,7 @@ static const u1_t ARTKEY[16] = { 0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6,
 
 // LoRaWAN end-device address (DevAddr)
 // See http://thethingsnetwork.org/wiki/AddressSpace
-static const u4_t DEVADDR = 0x03FF0007 ; // <-- Change this address for every node!
+static const u4_t DEVADDR = 0x03FF0001; // <-- Change this address for every node!
 
 //////////////////////////////////////////////////
 // APPLICATION CALLBACKS
@@ -67,7 +67,7 @@ void os_getDevKey (u1_t* buf) {
     memcpy(buf, DEVKEY, 16);
 }
 
-uint8_t mydata[] = "Hello, world!";
+uint8_t mydata[] = "It is Snoopy D.O double G!!!";
 static osjob_t sendjob;
 
 // Pin mapping
