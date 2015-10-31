@@ -46,7 +46,7 @@ static const u1_t ARTKEY[16] = { 0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6,
 
 // LoRaWAN end-device address (DevAddr)
 // See http://thethingsnetwork.org/wiki/AddressSpace
-static const u4_t DEVADDR = 0x03FF0001 ; // <-- Change this address for every node!
+static const u4_t DEVADDR = 0x03FF0007 ; // <-- Change this address for every node!
 
 //////////////////////////////////////////////////
 // APPLICATION CALLBACKS
@@ -84,6 +84,48 @@ void onEvent (ev_t ev) {
     switch(ev) {
       // scheduled data sent (optionally data received)
       // note: this includes the receive window!
+      case EV_SCAN_TIMEOUT:
+          Serial.println("Event scan timeout");
+	        break;
+      case EV_BEACON_FOUND:
+      	  Serial.println("Event beacon found");
+          break;
+      case EV_BEACON_MISSED:
+	        Serial.println("Event beacon missed.");
+      	  break;
+      case EV_BEACON_TRACKED:
+          Serial.println("Event beacon tracked");
+	        break;
+      case EV_JOINING:
+      	  Serial.println("Event joining");
+          break;
+      case EV_JOINED:
+	        Serial.println("Event joined.");
+      	  break;
+      case EV_RFU1:
+          Serial.println("Event RFU1");
+	        break;
+      case EV_JOIN_FAILED:
+      	  Serial.println("Event join failed");
+          break;
+      case EV_REJOIN_FAILED:
+	        Serial.println("Event rejoin failed.");
+      	  break;
+      case EV_LOST_TSYNC:
+      	  Serial.println("Event lost tsync");
+          break;
+      case EV_RESET:
+	        Serial.println("Event reset.");
+      	  break;
+      case EV_RXCOMPLETE:
+          Serial.println("Event RX complete");
+	        break;
+      case EV_LINK_DEAD:
+          Serial.println("Event link dead");
+	        break;
+      case EV_LINK_ALIVE:
+          Serial.println("Event link alive");
+	        break;
       case EV_TXCOMPLETE:
           // use this event to keep track of actual transmissions
           Serial.print("Event EV_TXCOMPLETE, time: ");
