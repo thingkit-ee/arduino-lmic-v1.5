@@ -2,5 +2,6 @@ Copy this folder to Arduino libraries folder as is.
 For example on Mac OS I have Documents/Arduino/libraries/lmic/
 Reference:
 https://www.arduino.cc/en/Guide/Libraries
+You can use the script create-library.sh in this folder to generate the symlinks.
 How to compile the project:
 Simply open the sketch file from the examples directory (of this repo), that is already tuned to using the library from the Arduino's library directory.
